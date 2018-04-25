@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CE6C1C8CE3CBE5F95980BAA /* Pods_Senfonico.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94B31FB3E9D62DFF711E81A /* Pods_Senfonico.framework */; };
+		FBC164C3208FB34A00DDF94A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC164C2208FB34A00DDF94A /* AppDelegate.swift */; };
+		FBC164C5208FB34A00DDF94A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC164C4208FB34A00DDF94A /* ViewController.swift */; };
+		FBC164C8208FB34A00DDF94A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC164C6208FB34A00DDF94A /* Main.storyboard */; };
+		FBC164CA208FB35400DDF94A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC164C9208FB35400DDF94A /* Assets.xcassets */; };
+		FBC164CD208FB35400DDF94A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC164CB208FB35400DDF94A /* LaunchScreen.storyboard */; };
+		FBC164D5208FB7ED00DDF94A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC164D4208FB7ED00DDF94A /* Image.swift */; };
+		FBC164D7208FC68A00DDF94A /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC164D6208FC68A00DDF94A /* ImageCell.swift */; };
+		FBC164DC20911E2100DDF94A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBC164DE20911E2100DDF94A /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		66F34ADA02A71C48581C15C7 /* Pods-Senfonico.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senfonico.release.xcconfig"; path = "Pods/Target Support Files/Pods-Senfonico/Pods-Senfonico.release.xcconfig"; sourceTree = "<group>"; };
+		B94B31FB3E9D62DFF711E81A /* Pods_Senfonico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Senfonico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFC135FDF5124A6A551259AE /* Pods-Senfonico.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senfonico.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Senfonico/Pods-Senfonico.debug.xcconfig"; sourceTree = "<group>"; };
+		FBC164BF208FB34A00DDF94A /* Senfonico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Senfonico.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC164C2208FB34A00DDF94A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBC164C4208FB34A00DDF94A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBC164C7208FB34A00DDF94A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBC164C9208FB35400DDF94A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBC164CC208FB35400DDF94A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FBC164CE208FB35400DDF94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC164D4208FB7ED00DDF94A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FBC164D6208FC68A00DDF94A /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		FBC164D820911DB600DDF94A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		FBC164D920911DB600DDF94A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FBC164DD20911E2100DDF94A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBC164DF20911E2500DDF94A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBC164BC208FB34A00DDF94A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE6C1C8CE3CBE5F95980BAA /* Pods_Senfonico.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D0A048F99C0B18CE0F045DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFC135FDF5124A6A551259AE /* Pods-Senfonico.debug.xcconfig */,
+				66F34ADA02A71C48581C15C7 /* Pods-Senfonico.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D93EDF50716C2A1BDBF5FCEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B94B31FB3E9D62DFF711E81A /* Pods_Senfonico.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBC164B6208FB34A00DDF94A = {
+			isa = PBXGroup;
+			children = (
+				FBC164C1208FB34A00DDF94A /* Senfonico */,
+				FBC164C0208FB34A00DDF94A /* Products */,
+				0D0A048F99C0B18CE0F045DF /* Pods */,
+				D93EDF50716C2A1BDBF5FCEC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FBC164C0208FB34A00DDF94A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBC164BF208FB34A00DDF94A /* Senfonico.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBC164C1208FB34A00DDF94A /* Senfonico */ = {
+			isa = PBXGroup;
+			children = (
+				FBC164C2208FB34A00DDF94A /* AppDelegate.swift */,
+				FBC164C4208FB34A00DDF94A /* ViewController.swift */,
+				FBC164D4208FB7ED00DDF94A /* Image.swift */,
+				FBC164D6208FC68A00DDF94A /* ImageCell.swift */,
+				FBC164C6208FB34A00DDF94A /* Main.storyboard */,
+				FBC164C9208FB35400DDF94A /* Assets.xcassets */,
+				FBC164CB208FB35400DDF94A /* LaunchScreen.storyboard */,
+				FBC164CE208FB35400DDF94A /* Info.plist */,
+				FBC164DE20911E2100DDF94A /* Localizable.strings */,
+			);
+			path = Senfonico;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBC164BE208FB34A00DDF94A /* Senfonico */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC164D1208FB35400DDF94A /* Build configuration list for PBXNativeTarget "Senfonico" */;
+			buildPhases = (
+				60C4DF27AAC96EC9E71BBF43 /* [CP] Check Pods Manifest.lock */,
+				FBC164BB208FB34A00DDF94A /* Sources */,
+				FBC164BC208FB34A00DDF94A /* Frameworks */,
+				FBC164BD208FB34A00DDF94A /* Resources */,
+				700D9413C2DE2468DDFC1B22 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Senfonico;
+			productName = Senfonico;
+			productReference = FBC164BF208FB34A00DDF94A /* Senfonico.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBC164B7208FB34A00DDF94A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Emre HAVAN";
+				TargetAttributes = {
+					FBC164BE208FB34A00DDF94A = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = FBC164BA208FB34A00DDF94A /* Build configuration list for PBXProject "Senfonico" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBC164B6208FB34A00DDF94A;
+			productRefGroup = FBC164C0208FB34A00DDF94A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBC164BE208FB34A00DDF94A /* Senfonico */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBC164BD208FB34A00DDF94A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC164CD208FB35400DDF94A /* LaunchScreen.storyboard in Resources */,
+				FBC164DC20911E2100DDF94A /* Localizable.strings in Resources */,
+				FBC164CA208FB35400DDF94A /* Assets.xcassets in Resources */,
+				FBC164C8208FB34A00DDF94A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60C4DF27AAC96EC9E71BBF43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Senfonico-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		700D9413C2DE2468DDFC1B22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Senfonico/Pods-Senfonico-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Senfonico/Pods-Senfonico-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBC164BB208FB34A00DDF94A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC164C5208FB34A00DDF94A /* ViewController.swift in Sources */,
+				FBC164D7208FC68A00DDF94A /* ImageCell.swift in Sources */,
+				FBC164D5208FB7ED00DDF94A /* Image.swift in Sources */,
+				FBC164C3208FB34A00DDF94A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FBC164C6208FB34A00DDF94A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC164C7208FB34A00DDF94A /* Base */,
+				FBC164D820911DB600DDF94A /* tr */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBC164CB208FB35400DDF94A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC164CC208FB35400DDF94A /* Base */,
+				FBC164D920911DB600DDF94A /* tr */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FBC164DE20911E2100DDF94A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBC164DD20911E2100DDF94A /* tr */,
+				FBC164DF20911E2500DDF94A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBC164CF208FB35400DDF94A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FBC164D0208FB35400DDF94A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBC164D2208FB35400DDF94A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFC135FDF5124A6A551259AE /* Pods-Senfonico.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56D56RFRE4;
+				INFOPLIST_FILE = Senfonico/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pun.Senfonico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBC164D3208FB35400DDF94A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66F34ADA02A71C48581C15C7 /* Pods-Senfonico.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56D56RFRE4;
+				INFOPLIST_FILE = Senfonico/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pun.Senfonico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBC164BA208FB34A00DDF94A /* Build configuration list for PBXProject "Senfonico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC164CF208FB35400DDF94A /* Debug */,
+				FBC164D0208FB35400DDF94A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC164D1208FB35400DDF94A /* Build configuration list for PBXNativeTarget "Senfonico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC164D2208FB35400DDF94A /* Debug */,
+				FBC164D3208FB35400DDF94A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBC164B7208FB34A00DDF94A /* Project object */;
+}

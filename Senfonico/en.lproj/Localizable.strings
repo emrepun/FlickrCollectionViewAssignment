@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Senfonico
+
+  Created by Emre HAVAN on 25.04.2018.
+  Copyright © 2018 Emre HAVAN. All rights reserved.
+*/
+
+"searchTextFieldPlaceHolderText" = "Enter a tag to search";
+"connectionErrorAlertTitle" = "Connection Error";
+"connectionErrorAlertMessage" = "Please make sure you have access to internet";
+"unavailableTagAlertTitle" = "Unavailable Tag";
+"unavailableTagAlertMessage" = "Please try again with another tag";
+"alertCompletionTitle" = "Okay";

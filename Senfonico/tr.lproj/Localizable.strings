@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Senfonico
+
+  Created by Emre HAVAN on 25.04.2018.
+  Copyright © 2018 Emre HAVAN. All rights reserved.
+*/
+
+"searchTextFieldPlaceHolderText" = "Etiket ara";
+"connectionErrorAlertTitle" = "Bağlantı Hatası";
+"connectionErrorAlertMessage" = "Lütfen internet bağlantınızı kontrol ediniz";
+"unavailableTagAlertTitle" = "Geçersiz etiket";
+"unavailableTagAlertMessage" = "Lütfen başka bir etiketle tekrar deneyiniz.";
+"alertCompletionTitle" = "Tamam";
