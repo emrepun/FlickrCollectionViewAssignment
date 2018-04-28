@@ -48,6 +48,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // MARK: Configurations
     func toolBarItems() -> [UIBarButtonItem] {
         let textFieldButton = UIBarButtonItem(customView: searchTextField)
+        searchTextField.keyboardType = .webSearch
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(setTagAndStartConnection))
         
@@ -92,7 +93,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         imageArray.removeAll()
         collectionView.reloadData()
         activityIndicator.startAnimating()
-        
+ 
         Alamofire.request(flickr_url, method: .get, parameters: parameters).responseJSON { [weak self] response in
             switch response.result {
             case .success(let value):
@@ -116,6 +117,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     self?.activityIndicator.stopAnimating()
                     self?.collectionView.reloadData()
                 }
+                
+                print("success for real")
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -146,6 +149,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
             self.showAlert(title: unavailableTagErrorTitle, message: unavailableTagErrorMessage)
         }
+        
         
         return cell
     }
@@ -189,6 +193,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        setTagAndStartConnection()
         return false
     }
 }
