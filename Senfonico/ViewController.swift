@@ -45,7 +45,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Configure collection view's keyboard dismiss type so we can hide it if a user drag around.
         collectionView.keyboardDismissMode = .interactive
-        
+    
         setTagAndStartConnection()
     }
     
@@ -82,7 +82,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 self?.displayImage(tag: "flower")
             }
-            
         }
         
         keyboardShouldHide()
@@ -132,7 +131,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         self?.activityIndicator.stopAnimating()
                         self?.collectionView.reloadData()
                     }
-                    
                 }
                 
                 print("success for real")
@@ -167,12 +165,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 }
                 
             } else {
-                cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
+                DispatchQueue.main.async {
+                    cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
+                }
+                
                 self?.showAlert(title: (self?.unavailableTagErrorTitle)!, message: (self?.unavailableTagErrorMessage)!)
             }
         }
-        
-        
         
         return cell
     }
@@ -198,7 +197,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         imageView.backgroundColor = .black
         imageView.contentMode = .scaleAspectFit
         imageView.isUserInteractionEnabled = true
-        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         imageView.addGestureRecognizer(tap)
