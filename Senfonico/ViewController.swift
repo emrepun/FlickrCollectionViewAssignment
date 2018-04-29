@@ -42,6 +42,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchTextField.delegate = self
         configureActivityIndicator()
         configureToolbarItems()
+        
+        // Configure collection view's keyboard dismiss type so we can hide it if a user drag around.
+        collectionView.keyboardDismissMode = .interactive
+        
         setTagAndStartConnection()
     }
     
@@ -103,6 +107,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 // Running through 20 Objects, since the amount of objects was not specified in the
                 // assignment
                 // Honestly I do not know yet to implement fetching more images as user scrolls down
+                
                 for index in 0..<20 {
                     let myFetchedPhoto = Image(userJson: json, index: index)
                     
@@ -143,12 +148,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let urlString = imageArray[indexPath.row].imageString
         let imageURL = URL(string: urlString)
         
-        if let imageData = NSData(contentsOf: imageURL!) {
-            cell.imageView.image = UIImage(data: imageData as Data)
-        } else {
-            cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
-            self.showAlert(title: unavailableTagErrorTitle, message: unavailableTagErrorMessage)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let imageData = NSData(contentsOf: imageURL!) {
+                DispatchQueue.main.async {
+                    cell.imageView.image = UIImage(data: imageData as Data)
+                }
+                
+            } else {
+                cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
+                self?.showAlert(title: (self?.unavailableTagErrorTitle)!, message: (self?.unavailableTagErrorMessage)!)
+            }
         }
+        
         
         
         return cell
