@@ -72,10 +72,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @objc func setTagAndStartConnection() {
+       
         if let tag = searchTextField.text, (searchTextField.text?.count)! > 0 {
-            displayImage(tag: tag)
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                self?.displayImage(tag: tag)
+            }
+            
         } else {
-            displayImage(tag: "flower")
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                self?.displayImage(tag: "flower")
+            }
+            
         }
         
         keyboardShouldHide()
@@ -95,8 +102,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Make sure the array is empty before we make the connection to avoid showing images from
         // previous calls.
         imageArray.removeAll()
-        collectionView.reloadData()
-        activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            self.activityIndicator.startAnimating()
+        }
  
         Alamofire.request(flickr_url, method: .get, parameters: parameters).responseJSON { [weak self] response in
             switch response.result {
@@ -119,8 +128,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     myFetchedPhoto.imageString = "http://farm\(farm).staticflickr.com/\(server)/\(photoID)_\(secret)_n.jpg/"
                     
                     self?.imageArray.append(myFetchedPhoto)
-                    self?.activityIndicator.stopAnimating()
-                    self?.collectionView.reloadData()
+                    DispatchQueue.main.async {
+                        self?.activityIndicator.stopAnimating()
+                        self?.collectionView.reloadData()
+                    }
+                    
                 }
                 
                 print("success for real")
@@ -172,6 +184,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // MARK: Large Image Settings
     func loadLargerImage(with urlString: String) {
+        self.keyboardShouldHide()
         let imageURL = URL(string: urlString)
         var image = UIImage()
         if let imageData = NSData(contentsOf: imageURL!) {
