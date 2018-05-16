@@ -33,6 +33,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     let searchTextField = UITextField(frame: CGRect(x: 16, y: 7, width: 240, height: 30))
     
+    var unavailableTagAlertCounter = 0
+    
     // Initialize an empty array which will be consists of Images to show.
     var imageArray = [Image]()
     
@@ -111,6 +113,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             case .success(let value):
                 print("success")
                 let json = JSON(value)
+                self?.unavailableTagAlertCounter = 0
                 
                 // Running through 20 Objects, since the amount of objects was not specified in the
                 // assignment
@@ -167,9 +170,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             } else {
                 DispatchQueue.main.async {
                     cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
+                    guard self?.unavailableTagAlertCounter == 0 else { return }
+                    self?.showAlert(title: (self?.unavailableTagErrorTitle)!, message: (self?.unavailableTagErrorMessage)!)
+                    self?.unavailableTagAlertCounter += 1
                 }
-                
-                self?.showAlert(title: (self?.unavailableTagErrorTitle)!, message: (self?.unavailableTagErrorMessage)!)
             }
         }
         
