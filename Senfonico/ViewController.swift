@@ -35,11 +35,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var unavailableTagAlertCounter = 0
     
-    // Initialize an empty array which will be consists of Images to show.
+    // Initialize an empty array, cache, task, session.
     var imageArray = [Image]()
+    var cache: NSCache<AnyObject, AnyObject>!
+    var task: URLSessionDownloadTask!
+    var session: URLSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cache = NSCache()
+        session = URLSession.shared
+        
         searchTextField.placeholder = searchTextFieldPlaceHolder
         searchTextField.delegate = self
         configureActivityIndicator()
@@ -103,6 +109,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Make sure the array is empty before we make the connection to avoid showing images from
         // previous calls.
         imageArray.removeAll()
+        cache.removeAllObjects()
         DispatchQueue.main.async {
             self.collectionView.reloadData()
             self.activityIndicator.startAnimating()
@@ -159,22 +166,30 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! ImageCell
         
         let urlString = imageArray[indexPath.row].imageString
-        let imageURL = URL(string: urlString)
         
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            if let imageData = NSData(contentsOf: imageURL!) {
-                DispatchQueue.main.async {
-                    cell.imageView.image = UIImage(data: imageData as Data)
-                }
-                
-            } else {
-                DispatchQueue.main.async {
-                    cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
-                    guard self?.unavailableTagAlertCounter == 0 else { return }
-                    self?.showAlert(title: (self?.unavailableTagErrorTitle)!, message: (self?.unavailableTagErrorMessage)!)
-                    self?.unavailableTagAlertCounter += 1
-                }
+        if(self.cache.object(forKey: (indexPath as IndexPath).row as AnyObject) != nil) {
+            cell.imageView.image = self.cache.object(forKey: (indexPath as IndexPath).row as AnyObject) as? UIImage
+        } else {
+            if let url = URL(string: urlString) {
+                task = session.downloadTask(with: url, completionHandler: { (location, response, error) -> Void in
+                    if error != nil {
+                        DispatchQueue.main.async {
+                            cell.imageView.image = #imageLiteral(resourceName: "placeholder-image")
+                        }
+                        self.showAlert(title:self.unavailableTagErrorTitle,message:self.unavailableTagErrorMessage)
+                        return
+                    }
+                    if let data = try? Data(contentsOf: url) {
+                        DispatchQueue.main.async(execute: {
+                            let img: UIImage! = UIImage(data: data)
+                            cell.imageView.image = img
+                            self.cache.setObject(img, forKey: (indexPath as IndexPath).row as AnyObject)
+                        })
+                    }
+                })
             }
+            task.resume()
+            
         }
         
         return cell
